@@ -1,0 +1,163 @@
+/* style.css */
+
+/* General Styles */
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2b2b2b;
+}
+
+.navbar-brand:hover {
+    color: #1a1a1a;
+}
+
+/* Jumbotron Styles */
+.jumbotron {
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: white;
+    padding: 60px 25px;
+}
+
+
+.jumbotron h1 ,h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.jumbotron .btn-success {
+    background-color: #28a745;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.25rem;
+}
+
+.jumbotron .btn-success:hover {
+    background-color: #218838;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #2b2b2b;
+}
+
+.card-text {
+    font-size: 1.25rem;
+    color: #666;
+}
+
+/* Registration Form Styles */
+.regform {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.regform h3 {
+    font-weight: bold;
+    color: #2b2b2b;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+}
+
+.submit-btn {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.field-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.input-group {
+    position: relative;
+}
+
+.error-message {
+    color: red;
+}
+
+/* Link Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #2b2b2b;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 767.98px) {
+    .jumbotron h1 {
+        font-size: 2.5rem;
+    }
+
+    .jumbotron .btn-success {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+}
