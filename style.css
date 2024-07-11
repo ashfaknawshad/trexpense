@@ -1,163 +1,82 @@
-/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* General Styles */
-body {
-    background-color: #f4f4f9;
-    font-family: Arial, sans-serif;
-    color: #333;
-    margin: 0;
+*{
+    margin:0;
     padding: 0;
-}
-
-.container {
-    margin-top: 50px;
-}
-
-.navbar-brand {
-    font-weight: bold;
-    color: #2b2b2b;
-}
-
-.navbar-brand:hover {
-    color: #1a1a1a;
-}
-
-/* Jumbotron Styles */
-.jumbotron {
-    background: linear-gradient(to right, #6dd5ed, #2193b0);
-    color: white;
-    padding: 60px 25px;
-}
-
-
-.jumbotron h1 ,h1{
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-.jumbotron .btn-success {
-    background-color: #28a745;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.25rem;
+    outline: none;
+    box-shadow: border-box;
+    font-family: 'Poppins', sans-serif;
 }
+        
+        /* General form styles */
+        .regform {
+            max-width: 600px;
+            margin: auto;
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
 
-.jumbotron .btn-success:hover {
-    background-color: #218838;
-}
+        .regform input[type="email"],
+        .regform input[type="text"],
+        .regform input[type="password"],
+        .regform input[type="date"],
+        .regform input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
 
-/* Card Styles */
-.card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+        .regform input[type="email"]:focus,
+        .regform input[type="text"]:focus,
+        .regform input[type="password"]:focus,
+        .regform input[type="date"]:focus {
+            border-color: #4caf50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
 
-.card-title {
-    font-weight: bold;
-    color: #2b2b2b;
-}
+        .regform .form-text {
+            margin-bottom: 1rem;
+            color: #6c757d;
+        }
 
-.card-text {
-    font-size: 1.25rem;
-    color: #666;
-}
+        .regform .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-/* Registration Form Styles */
-.regform {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        .regform .btn:hover {
+            background-color: #45a049;
+        }
 
-.regform h3 {
-    font-weight: bold;
-    color: #2b2b2b;
-}
+        
 
-.form-control {
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-}
+        .error-message {
+            color: red;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+        }
 
-.form-control:focus {
-    border-color: #80bdff;
-    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
-}
+        /* Add some spacing to the input group */
+        .input-group {
+            margin-bottom: 1rem;
+        }
 
-.submit-btn {
-    background-color: #28a745;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-}
-
-.submit-btn:hover {
-    background-color: #218838;
-}
-
-.field-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.input-group {
-    position: relative;
-}
-
-.error-message {
-    color: red;
-}
-
-/* Link Styles */
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Footer Styles */
-.footer {
-    background-color: #2b2b2b;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: #ccc;
-    text-decoration: underline;
-}
-
-/* Responsive Styles */
-@media (max-width: 767.98px) {
-    .jumbotron h1 {
-        font-size: 2.5rem;
-    }
-
-    .jumbotron .btn-success {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    .card-text {
-        font-size: 1rem;
-    }
-}
+        /* Align the checkbox properly */
+        .form-check {
+            text-align: left;
+        }

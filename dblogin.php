@@ -11,10 +11,9 @@ $pass = $_POST['password'];
 
 //Handling the Admin Login to Access UsersList.php 
 if($uname == "admin@gmail.com" && $pass == "admin2024"){
-        $_SESSION['adminloggedin'] = true;
-        header('Location:userslist.php');
-        exit();
-    
+    $_SESSION['adminloggedin'] = true;
+    header('Location:userslist.php');
+    exit();
 }
 
 //Handling the User Login to Access Dashboard.php
@@ -36,26 +35,27 @@ $result = $stmt->get_result();
 if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
     // Verify the password
-    if ($user['password']===$pass) {
-          // Redirect to the desired page
-          $_SESSION['userloggedin'] = $uname;
-          header("Location: dashboard.php");
-          exit();
-      } else {
-          // Invalid password
-          header("Location: login.php?error");
-          exit();
-      }
-  } else {
-      // Invalid email or user does not exist
-      header("Location: login.php?error");
-      exit();
-  }
-  
+    if ($user['password'] === $pass) {
+        // Store user details in session
+        $_SESSION['userloggedin'] = $uname;
+        $_SESSION['firstname'] = $user['firstName'];
+        $_SESSION['lastname'] = $user['lastName'];
+
+        // Redirect to the desired page
+        header("Location: dashboard/index.php");
+        exit();
+    } else {
+        // Invalid password
+        header("Location: login.php?error");
+        exit();
+    }
+} else {
+    // Invalid email or user does not exist
+    header("Location: login.php?error");
+    exit();
+}
+
 // Close the database connection
 $stmt->close();
 $conn->close();
-
-
-
 ?>
