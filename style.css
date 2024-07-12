@@ -8,23 +8,56 @@
     box-shadow: border-box;
     font-family: 'Poppins', sans-serif;
 }
-        
+
+#register-body, #main-body, #login-body{
+    background: #28ce54;
+}
+
+.white{
+    color: #fff;
+}
+
+.green{
+    color: #28ce54;
+}
+
+
+
+ 
         /* General form styles */
-        .regform {
-            max-width: 600px;
-            margin: auto;
+
+        .btn-white{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #28ce54;
+            font-size: 1rem;
+            cursor: pointer;
+            max-width: 400px;
+            transition: background-color 0.3s;
+        }
+
+        
+        .regform{
+            background: #fff;
             padding: 2rem;
-            border: 1px solid #e0e0e0;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #ffffff;
+            justify-content: center;
+            align-items: center;  
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            
+            
         }
 
         .regform input[type="email"],
         .regform input[type="text"],
         .regform input[type="password"],
-        .regform input[type="date"],
-        .regform input[type="radio"] {
+        .regform input[type="date"]
+         {
             width: 100%;
             padding: 10px;
             margin-bottom: 1rem;
@@ -63,6 +96,13 @@
             background-color: #45a049;
         }
 
+       
+        .btn.submit-btn {
+            max-width: 200px;
+        }
+
+
+
         
 
         .error-message {
@@ -74,9 +114,11 @@
         /* Add some spacing to the input group */
         .input-group {
             margin-bottom: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
         }
 
-        /* Align the checkbox properly */
-        .form-check {
-            text-align: left;
-        }
+     
+
+
+    

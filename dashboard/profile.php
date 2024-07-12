@@ -10,6 +10,14 @@ if (!isset($_SESSION['userloggedin'])) {
 // Retrieve user details from session
 $firstName = $_SESSION['firstname'];
 $lastName = $_SESSION['lastname'];
+$email = $_SESSION['userloggedin'];
+$createdDate = $_SESSION['createdDate'];
+$dob = $_SESSION['dob'];
+
+
+// Convert dob and createdDate to desired format
+$dobFormatted = (new DateTime($dob))->format('jS \of F, Y');
+$createdDateFormatted = (new DateTime($createdDate))->format('jS \of F, Y');
 ?>
 
 <div class="header--wrapper">
@@ -32,19 +40,19 @@ $lastName = $_SESSION['lastname'];
             </div>
             <div class="info--item">
                 <h4>Email:</h4>
-                <p>john.doe@example.com</p>
+                <p><?php echo htmlspecialchars($email); ?></p>
             </div>
             <div class="info--item">
                 <h4>Phone:</h4>
                 <p>+123 456 7890</p>
             </div>
             <div class="info--item">
-                <h4>Address:</h4>
-                <p>123 Street, City, Country</p>
+                <h4>Date of Birth:</h4>
+                <p><?php echo htmlspecialchars($dobFormatted); ?></p>
             </div>
             <div class="info--item">
                 <h4>Joined:</h4>
-                <p>January 1, 2020</p>
+                <p><?php echo htmlspecialchars($createdDateFormatted); ?></p>
             </div>
         </div>
     </div>

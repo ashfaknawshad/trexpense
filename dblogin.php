@@ -40,6 +40,13 @@ if ($result->num_rows === 1) {
         $_SESSION['userloggedin'] = $uname;
         $_SESSION['firstname'] = $user['firstName'];
         $_SESSION['lastname'] = $user['lastName'];
+        $_SESSION['gender'] = $user['gender'];
+        $_SESSION['dob'] = $user['dob'];
+        $_SESSION['createdDate'] = $user['createdDate'];
+
+
+
+        
 
         // Redirect to the desired page
         header("Location: dashboard/index.php");

@@ -15,17 +15,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
-<body>
+<body id="main-body">
 <?php
       include_once('nav-common.php');
     ?>
 
-    <div class="jumbotron text-center">
-        <h1 class="display-4">Welcome to TrExpense</h1>
-        <p class="lead">Manage your finances with ease using TrExpense. Keep track of your spending, stay within budget, and achieve your financial goals.</p>
+    <div class="mt-5 text-center mb-5">
+        <h1 class="display-4 white">Welcome to TrExpense</h1>
+        <p class="lead white">Manage your finances with ease using TrExpense. Keep track of your spending, stay within budget, and achieve your financial goals.</p>
         <hr class="my-4">
-        <h3 class="display-7 mb-4">Ready for your savings journey?</h3>
-        <a class="btn btn-success btn-lg" href="register.php" role="button">Register Now!</a>
+        <h3 class="display-7 mb-4 white">Ready for your savings journey?</h3>
+        <a class="btn btn-white btn-lg" href="register.php" role="button">Register Now!</a>
         
     </div>
 

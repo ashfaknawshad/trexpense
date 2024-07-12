@@ -13,13 +13,15 @@
     <!-- Favicons -->
     <link href="https://i.ibb.co/m0qwzgZ/trexpense-favicon.png" rel="icon">
     <link href="https://i.ibb.co/kG3Pn2M/trexpense-apple-touch-icon.png" rel="apple-touch-icon">
-    <!-- My CSS -->
-    <link rel="stylesheet" href="styles.css">
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="login-body">
     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.php"><img src="https://i.ibb.co/x74SzZ2/techwave-favicon.png"> TechWave</a>
@@ -52,12 +54,10 @@
       include_once('nav-common.php');
     ?>
 
+    
     <div class="container mb-5">
-        <h3 class="display-4 text-center mt-5 mb-4">Welcome Back!</h3>
-        <hr class="my-4">
-    </div>
-    <div class="container d-flex justify-content-center">
-        <form action="dblogin.php" method="POST" class="loginform mb-5 text-center">
+        <form action="dblogin.php" method="POST" class="regform mt-5 mb-5 text-center">
+          <h1 class="mb-4  green text-center">Welcome Back!</h1>
             <div class="mb-4 ">
              
               <input type="text" class="form-control data-in text-center" onkeyup="hideAlertBox()" id="username" name="email" aria-describedby="userNameHelp" placeholder="Username">
@@ -104,3 +104,6 @@
     
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

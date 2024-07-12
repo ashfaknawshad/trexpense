@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account - TrExpense</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Favicons -->
-    <link href="https://i.ibb.co/x74SzZ2/techwave-favicon.png" rel="icon">
-    <link href="https://i.ibb.co/fQppK8D/techwave-apple-touch-icon.png" rel="apple-touch-icon">
+   <!-- Favicons -->
+   <link href="https://i.ibb.co/m0qwzgZ/trexpense-favicon.png" rel="icon">
+    <link href="https://i.ibb.co/kG3Pn2M/trexpense-apple-touch-icon.png" rel="apple-touch-icon">
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -17,28 +17,26 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body id="register-body">
 
 <?php include_once('nav-common.php'); ?>
 
-<div class="container mb-5">
-    <h1 class="text-center mt-5 mb-4">Let's get started!</h3>
-    <hr class="my-4">
-</div>
-<div class="container">
-    <form action="dbregister.php" method="POST" class="regform mb-5 text-center" onsubmit="return validateForm()">
+
+<div class="container mt-5 mb-5">
+    <form action="dbregister.php" method="POST" class="regform text-center" onsubmit="return validateForm()">
+        <h1 class=" text-center green ">Let's get started!</h1>
         <div class="form-group mb-2">
-            <input type="email" onkeyup="hideAlertBox()" class="form-control text-center" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <input type="email" onkeyup="hideAlertBox()" class="form-control text-center mt-4" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             <div id="emailError" class="error-message"></div>
         </div>
         <div class="mb-4">
-            <input type="text" class="form-control data-in text-center" id="firstName" name="fname" aria-describedby="firstNameHelp" placeholder="First Name" required>
+            <input type="text" class="form-control data-in text-center mt-4" id="firstName" name="fname" aria-describedby="firstNameHelp" placeholder="First Name" required>
         </div>
         <div class="mb-4">
             <input type="text" class="form-control data-in text-center" id="lastName" name="lname" aria-describedby="lastNameHelp" placeholder="Last Name" required>
         </div>
-        <div class="mb-4 input-group">
+        <div class="mb-1 input-group">
             <input type="password" class="form-control data-in text-center" id="password" name="password" aria-describedby="passwordHelp" placeholder="Password" required>
         </div>
         <div class="form-check mb-2">
@@ -47,10 +45,10 @@
                 Show Password
             </label>
         </div>
-        <small id="passwordHelp" class="form-text text-muted">Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one number, and one symbol.</small>
+        <small id="passwordHelp" class="form-text text-muted mb-5">Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one number, and one symbol.</small>
         <div id="passwordError" class="error-message"></div>
         <div class="mb-4">
-            <small id="dobHelp" class="form-text">Date of Birth</small>                        
+            <small id="dobHelp" class="form-text ">Date of Birth</small>                        
             <input type="date" class="form-control data-in text-center" id="date" name="dob" placeholder="Date of Birth" required>
         </div>
         <div class="mb-4">
@@ -65,10 +63,10 @@
             </div>
         </div>
         <div class="row mb-4">
-            <div class="col-md-6">
+            <div class="mb-2">
                 <button type="submit" class="btn submit-btn btn-dark">Create Account</button>
             </div>
-            <div class="col-md-6 text-md-right">
+            <div >
                 Returning user? <a href="login.php">Sign in!</a>
             </div>
         </div>
