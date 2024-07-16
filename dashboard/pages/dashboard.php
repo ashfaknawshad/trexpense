@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -89,97 +90,75 @@ $lastName = $_SESSION['lastname'];
                     <th>Action</th>
                 </tr>
             </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            2022-11-11
-                        </td>
-                        <td>
-                            Expenses
-                        </td>
-                        <td>
-                            Clothing
-                        </td>
-                        <td>
-                            $100
-                        </td>
-                        <td>
-                            Personal Expenses
-                        </td>
-                        <td>
-                            Done
-                        </td>
-                        <td><button>Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            2022-11-11
-                        </td>
-                        <td>
-                            Expenses
-                        </td>
-                        <td>
-                            Clothing
-                        </td>
-                        <td>
-                            $100
-                        </td>
-                        <td>
-                            Personal Expenses
-                        </td>
-                        <td>
-                            Done
-                        </td>
-                        <td><button>Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            2022-11-11
-                        </td>
-                        <td>
-                            Expenses
-                        </td>
-                        <td>
-                            Clothing
-                        </td>
-                        <td>
-                            $100
-                        </td>
-                        <td>
-                            Personal Expenses
-                        </td>
-                        <td>
-                            Done
-                        </td>
-                        <td><button>Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            2022-11-11
-                        </td>
-                        <td>
-                            Expenses
-                        </td>
-                        <td>
-                            Clothing
-                        </td>
-                        <td>
-                            $100
-                        </td>
-                        <td>
-                            Personal Expenses
-                        </td>
-                        <td>
-                            Done
-                        </td>
-                        <td><button>Edit</button></td>
-                    </tr>
-                </tbody>
+        
+
+                <?php
+                // Connect to the MySQL database
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "trexpense";
+                $user_id=$_SESSION['user_id'];
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                        
+                // SQL query to select the desired columns from the "Transactions" table
+                $sql = "SELECT id,transaction_type,description,amount,category,status,date FROM transactions WHERE user_id = '$user_id' ORDER BY date DESC";
+              
+
+                
+                // Execute the query
+                $result = $conn->query($sql);
+
+                // Check if the query was successful
+                if ($result) {
+                    // Fetch the rows
+                    while ($row = $result->fetch_assoc()) {
+                        // Display the data in table rows
+                        echo "<tr>";
+                        echo "<td>" . $row["date"] . "</td>";
+                        echo "<td>" . $row["transaction_type"] . "</td>";
+                        echo "<td>" . $row["description"] . "</td>";
+                        echo "<td>" . $row["amount"] . "</td>";
+                        echo "<td>" . $row["category"] . "</td>";
+                        echo "<td>" . $row["status"] . "</td>";
+                        echo "<td> <a class='btn' href=" . "../add_transactions.php?delid=" . $row["id"] . "> Delete </a> </td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+
+                // Close the connection
+                $conn->close();
+                ?>
+
+                    
+        </tbody>
                 <tfoot>
                     <tr>
                         <td colspan="7">Total: $400</td>
                     </tr>
                 </tfoot>
         </table>
+      
+        <button id="openModalBtn">+ Add New Transaction</button>
+
+
+
+
     </div>
 </div>
+
+
+
+
+
+
+

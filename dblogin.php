@@ -43,6 +43,7 @@ if ($result->num_rows === 1) {
         $_SESSION['gender'] = $user['gender'];
         $_SESSION['dob'] = $user['dob'];
         $_SESSION['createdDate'] = $user['createdDate'];
+        $_SESSION['user_id'] = $user['id'];
 
 
 
