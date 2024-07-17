@@ -22,31 +22,36 @@ if ($conn->connect_error) {
 
 // Check if the form has been submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the form data
-    $date = $_POST['date'];
-    $transaction_type = $_POST['transaction_type'];
-    $description = $_POST['description'];
-    $amount = $_POST['amount'];
-    $category = $_POST['category'];
-    $status = $_POST['status'];
+    // Get the transaction ID
+    $transaction_id = $_POST['delete_id'];
     $user_id = $_SESSION['user_id'];
 
-    // Prepare and execute the SQL statement to insert transaction
-    $stmt = $conn->prepare("INSERT INTO transactions (user_id, transaction_type, description, amount, category, status, date) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $user_id, $transaction_type, $description, $amount, $category, $status, $date);
+    // Fetch the transaction details to get the amount and type before deletion
+    $fetch_transaction_sql = "SELECT transaction_type, amount FROM transactions WHERE id = ? AND user_id = ?";
+    $fetch_stmt = $conn->prepare($fetch_transaction_sql);
+    $fetch_stmt->bind_param("ii", $transaction_id, $user_id);
+    $fetch_stmt->execute();
+    $fetch_stmt->bind_result($transaction_type, $amount);
+    $fetch_stmt->fetch();
+    $fetch_stmt->close();
 
-    if ($stmt->execute()) {
-        // Transaction successfully inserted, now update user totals if necessary
-        update_user_totals($conn, $user_id, $transaction_type, $amount);
+    // Delete the transaction
+    $delete_transaction_sql = "DELETE FROM transactions WHERE id = ? AND user_id = ?";
+    $delete_stmt = $conn->prepare($delete_transaction_sql);
+    $delete_stmt->bind_param("ii", $transaction_id, $user_id);
 
-        header('Location: index.php?inserted');
+    if ($delete_stmt->execute()) {
+        // Transaction successfully deleted, now update user totals
+        update_user_totals($conn, $user_id, $transaction_type, -$amount);
+
+        header('Location: index.php?deleted');
         exit();
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $delete_stmt->error;
     }
 
     // Close the statement
-    $stmt->close();
+    $delete_stmt->close();
 }
 
 // Close the connection
@@ -101,4 +106,4 @@ function update_user_totals($conn, $user_id, $transaction_type, $amount) {
     $update_stmt->execute();
     $update_stmt->close();
 }
-
+?>

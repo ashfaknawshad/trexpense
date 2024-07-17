@@ -43,7 +43,14 @@ if ($result->num_rows === 1) {
         $_SESSION['gender'] = $user['gender'];
         $_SESSION['dob'] = $user['dob'];
         $_SESSION['createdDate'] = $user['createdDate'];
+        $_SESSION['profile_picture'] = $user['profile_picture'];
         $_SESSION['user_id'] = $user['id'];
+        $_SESSION['total_income'] = $user['total_income'];
+        $_SESSION['total_expenses'] = $user['total_expenses'];
+        $_SESSION['total_fixed_savings'] = $user['total_fixed_savings'];
+        $_SESSION['total_equity'] = $user['total_equity'];
+        $_SESSION['net_balance'] = $user['net_balance'];
+        
 
 
 

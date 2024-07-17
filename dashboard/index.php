@@ -8,6 +8,7 @@
     <title>Dashboard </title>
     
 
+
     <link rel="stylesheet" href="dashboard.css">
     <!-- Favicons -->
     <link href="https://i.ibb.co/m0qwzgZ/trexpense-favicon.png" rel="icon">
@@ -32,7 +33,7 @@
                         <span>Profile</span>
                     </a>
                 </li>
-                <li data-page="statistics">
+                <!-- <li data-page="statistics">
                     <a class="no-pointer">
                         <i class="fas fa-chart-bar"></i>
                         <span>Statistics</span>
@@ -55,7 +56,7 @@
                         <i class="fas fa-star"></i>
                         <span>Testimonials</span>
                     </a>
-                </li>
+                </li> -->
                 <li data-page="settings">
                     <a class="no-pointer">
                         <i class="fas fa-cog"></i>
@@ -79,21 +80,23 @@
      <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2>Add New Entry</h2>
-                <form action="add_transactions.php" method="POST">
+                <h2>Add New Transaction</h2>
+                <form class="modform" action="add_transactions.php" method="POST">
                     <label for="date">Date:</label>
                     <input type="date" id="date" name="date" required><br><br>
                     <label for="transaction_type">Transaction Type:</label>
                     <select id="transaction_type" name="transaction_type" required>
                         <option value="income">Income</option>
                         <option value="expenses">Expenses</option>
+                        <option value="fixed savings">Fixed Savings</option>
+                        <option value="equity">Equity</option>
                     </select><br><br>
                     <label for="description">Description:</label>
-                    <input type="text" id="description" name="description" required><br><br>
+                    <input type="text" id="description" name="description" required><br>
                     <label for="amount">Amount:</label>
-                    <input type="number" id="amount" name="amount" required><br><br>
+                    <input type="number" id="amount" name="amount" required><br>
                     <label for="category">Category:</label>
-                    <input type="text" id="category" name="category" required><br><br>
+                    <input type="text" id="category" name="category" required><br>
                     <label for="status">Status:</label>
                     <select id="status" name="status" required>
                         <option value="done">Done</option>
@@ -104,6 +107,20 @@
             </div>
         </div>
     
+     <!-- Modal HTML structure for delete confirmation -->
+     <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirm Delete</h2>
+            <p>Are you sure you want to delete this transaction?</p>
+            <form action="delete_transaction.php" method="POST">
+                <input type="hidden" name="delete_id" id="delete_id">
+                <button type="submit">Delete</button>
+                <button type="button" id="cancelDelete">Cancel</button>
+            </form>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
