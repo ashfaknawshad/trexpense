@@ -32,7 +32,7 @@ We welcome contributions from the community! If you want to contribute to Trexpe
 
 
 <h2>License</h2>
-This project uses the <a href="https://templatemo.com/tm-562-space-dynamic">Space Dynamic</a> template offered by <a href="https://templatemo.com">templatemo</a>.
+This project uses the <a href="https://templatemo.com/tm-562-space-dynamic">Space Dynamic</a> template offered by <a href="https://templatemo.com">templatemo</a> (only for the homepage).
 <br/>
 
 <h2>Acknowledgements</h2>
