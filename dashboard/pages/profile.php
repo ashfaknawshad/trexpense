@@ -15,6 +15,7 @@ $email = $_SESSION['userloggedin'];
 $createdDate = $_SESSION['createdDate'];
 $dob = $_SESSION['dob'];
 $gender = $_SESSION['gender'];
+$profilePicture = $_SESSION['profile_picture'];
 
 
 // Convert dob and createdDate to desired format
@@ -36,7 +37,7 @@ $createdDateFormatted = (new DateTime($createdDate))->format('jS \of F, Y');
 <div class="header--wrapper">
     <h2 class="header--title">User Profile</h2>
     <div class="user--info">
-        <img src="../TrExpense Logo.png" alt="Site logo">
+        <img src="<?php echo htmlspecialchars($_SESSION['profile_picture']); ?>" alt="Site logo">
         <div>
             <h4><?php echo htmlspecialchars($firstName . ' ' . $lastName); ?></h4>
             <p><?php echo htmlspecialchars($email); ?></p>

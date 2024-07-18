@@ -32,6 +32,8 @@ body{
     transition: 0.5s;
 }
 
+
+
 .logo{
     height: 80px;
     padding: 16px;
@@ -89,7 +91,7 @@ body{
 .header--wrapper img{
     width: 50px;
     height: 50px;
-    cursor: pointer;
+    cursor: default;
     border-radius: 50%;
 }
 
@@ -400,7 +402,7 @@ h2 {
 }
 
 /* Button styling */
-.modal button, #profileForm button, .propicupdate button {
+.modal button, #profileForm button, .propicupdate button, .add--testimonial button {
     background-color: #28ce54;
     color: #fff;
     border: none;
@@ -414,7 +416,7 @@ h2 {
     border-radius: 4px;
 }
 
-.modal button:hover, #profileForm button:hover, .propicupdate button:hover {
+.modal button:hover, #profileForm button:hover, .propicupdate button:hover, .add--testimonial button:hover {
     background-color: #1f9e3c;
 }
 
@@ -444,7 +446,8 @@ h2 {
 #profileForm input[type="text"],
 #profileForm select,
 #profileForm input[type="date"],
-#profileForm input[type="email"] {
+#profileForm input[type="email"],
+.add--testimonial textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -459,7 +462,9 @@ h2 {
 #profileForm input[type="text"]:focus,
 #profileForm select:focus,
 #profileForm input[type="date"]:focus,
-#profileForm input[type="email"]:focus {
+#profileForm input[type="email"]:focus,
+.add--testimonial textarea:focus
+{
     outline: none;
     border-color: #28ce54;
     box-shadow: 0 0 5px #28ce54;
@@ -516,6 +521,87 @@ h2 {
     overflow: hidden;
 }
 
+
+/* TESTIMONIAL PAGE CSS */
+
+.testimonials--container, .add--testimonial {
+    width: 80%;
+    margin: 10px auto 50px auto;
+    padding: 20px;
+}
+.testimonial--header{
+    margin-bottom: 50px;
+    
+}
+
+.testimonial--card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 60px;
+    box-shadow: 0 0 10px rgba(78, 252, 15, 0.268);
+    position: relative;
+    margin-bottom: 60px;
+    text-align: center;
+    
+}
+
+.testimonial--card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid #28ce54;
+    margin-bottom: 10px;
+}
+
+.testimonial--text {
+    padding-top: 40px;
+}
+
+.testimonial--date{
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
+}
+
+.testimonial--content p{
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    padding: 25px 50px 30px 50px;
+    font-style: italic;
+}
+
+.testimonial--content h3{
+    color: #28ce54;
+    
+    
+}
+
+.add--testimonial h3{
+    color: #28ce54;
+    
+}
+
+.add-feedback--container {
+    margin-top: 40px;
+}
+
+.form--group {
+    margin-bottom: 20px;
+}
+
+.form--group input[type="text"],
+.form--group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
 
 

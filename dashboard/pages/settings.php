@@ -75,6 +75,7 @@ $dobFormatted = (new DateTime($dob))->format('Y-m-d');
             <div class="input-group">
                 <input type="file" name="profilePicture" id="profilePicture" accept="image/*">
             </div>
+            <br/>
             <button type="submit">Upload Picture</button>
         </form>
 

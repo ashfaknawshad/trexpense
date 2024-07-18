@@ -67,12 +67,12 @@
             </div>
             <div class="mb-4 row">
                 <div class="col-md-6">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe">
-                    <label class="form-check-label" for="rememberMe">
-                      Remember Me
-                    </label>
-                  </div>
+                <div class="form-check mb-2">
+                  <input class="form-check-input" type="checkbox" id="showPassword" onclick="togglePassword()">
+                  <label class="form-check-label" for="showPassword">
+                      Show Password
+                  </label>
+              </div>
                 </div>
                 <div class="col-md-6 text-md-right">
                   <a href="#">Forgot Password?</a>
@@ -99,6 +99,18 @@
         const alertBox = document.getElementById("alertbox");
         alertBox.style.display = "none";
       }
+
+      // Show/Hide password JS
+
+      function togglePassword() {
+        var password = document.getElementById("password");
+        if (password.type === "password") {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+    }
+      
     </script>
 
     

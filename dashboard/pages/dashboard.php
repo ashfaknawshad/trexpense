@@ -58,7 +58,9 @@ $conn->close();
                     <input type="text" placeholder="Description or Category" id="" name="search">
                 </div>
                 <div class="circle-container">
-                <img src="<?php echo htmlspecialchars($_SESSION['profile_picture']); ?>" alt="user-icon" >
+                
+                    <img src="<?php echo htmlspecialchars($_SESSION['profile_picture']); ?>" alt="user-icon" >
+                
                 </div>
                 
             </div>
@@ -66,7 +68,7 @@ $conn->close();
     </div>
 
     <div class="card--container">
-        <h3 class="main--title">Today's data</h3>
+        <h3 class="main--title">Today's data </h3>
         <div class="card--wrapper">
             <div class="payment--card light--green">
                 <div class="card--header">

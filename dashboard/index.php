@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard </title>
+    <title>TrExpense Dashboard </title>
     
 
 
@@ -50,20 +50,20 @@
                         <i class="fas fa-question-circle"></i>
                         <span>FAQs</span>
                     </a>
-                </li>
+                </li> -->
                 <li data-page="testimonials">
                     <a class="no-pointer">
                         <i class="fas fa-star"></i>
                         <span>Testimonials</span>
                     </a>
-                </li> -->
+                </li>
                 <li data-page="settings">
                     <a class="no-pointer">
                         <i class="fas fa-cog"></i>
                         <span>Settings</span>
                     </a>
                 </li>
-                <li class="logout">
+                <li>
                     <a href="../index.php">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
